@@ -11,7 +11,6 @@ class WeatherCollectionViewCell: UICollectionViewCell {
     
     private lazy var weekDay: UILabel = {
         let label = UILabel()
-        label.text = "Monday"
         label.font = UIFont(name: "Montserrat-Light", size: 10)
         label.textColor = .black
         
@@ -28,7 +27,7 @@ class WeatherCollectionViewCell: UICollectionViewCell {
     }()
     
     let dailyWeatherImage: UIImageView = {
-        let image = UIImageView(image: UIImage(named: ""))
+        let image = UIImageView()
         image.contentMode = .scaleAspectFit
         
         return image
@@ -36,7 +35,6 @@ class WeatherCollectionViewCell: UICollectionViewCell {
     
     lazy var dailyTemperatureLabel: UILabel = {
         let label = UILabel()
-        label.text = ""
         label.font = UIFont(name: "Montserrat-Light", size: 12)
         label.textColor = .black
         label.textAlignment = .center
