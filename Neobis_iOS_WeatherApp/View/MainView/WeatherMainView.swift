@@ -14,8 +14,8 @@ class WeatherMainView: UIView {
     //Level 1
     lazy var searchButton: UIButton = {
         let button = UIButton()
-        button.setBackgroundImage(UIImage(systemName: "magnifyingglass.circle"), for: .normal)
-        button.tintColor = .black
+        button.tintColor = .white
+        button.setBackgroundImage(UIImage(systemName: "magnifyingglass"), for: .normal)
         button.isUserInteractionEnabled = true
 
         return button
@@ -202,8 +202,9 @@ class WeatherMainView: UIView {
     let flowLayout: UICollectionViewFlowLayout = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
-        layout.minimumLineSpacing = 10
-        layout.itemSize = CGSize(width: 70, height: 90)
+        layout.minimumInteritemSpacing = 10
+//        let cellWidth = (UIScreen.main.bounds.width - 10 * 5 ) / 5.0
+        layout.itemSize = CGSize(width: 60, height: 90)
         
         return layout
     }()
@@ -237,7 +238,7 @@ class WeatherMainView: UIView {
     }
     
     func addSubviews(){
-//        addSubview(searchButton)
+        addSubview(searchButton)
         addSubview(dateLabel)
         addSubview(cityLabel)
         addSubview(countryLabel)
@@ -266,11 +267,11 @@ class WeatherMainView: UIView {
     }
     
     func setupConstraints(){
-//        searchButton.snp.makeConstraints(){ make in
-//            make.top.equalToSuperview().offset(30)
-//            make.right.equalToSuperview().inset(25)
-//            make.height.width.equalTo(30)
-//        }
+        searchButton.snp.makeConstraints(){ make in
+            make.top.equalToSuperview().offset(40)
+            make.right.equalToSuperview().inset(25)
+            make.height.width.equalTo(30)
+        }
         
         dateLabel.snp.makeConstraints(){ make in
             make.centerX.equalToSuperview()
@@ -391,8 +392,4 @@ class WeatherMainView: UIView {
         gradientLayer.endPoint = CGPoint(x: 0.5, y: 1)
 //        layer.insertSublayer(gradientLayer, at: 0)
     }
-    
-//    @objc func didTapSearchButton(_ sender: UIButton){
-//        print("search tapped")
-//    }
 }

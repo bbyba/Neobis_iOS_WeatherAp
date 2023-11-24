@@ -30,7 +30,6 @@ class ViewController: UIViewController {
 
         mainView.collectionView.delegate = self
         mainView.collectionView.dataSource = self
-        configureNavBar()
         addTargets()
     }
     
@@ -40,11 +39,6 @@ class ViewController: UIViewController {
         }
     }
     
-    func configureNavBar() {
-        let searchBarButtonItem = UIBarButtonItem(customView: mainView.searchButton)
-        navigationItem.rightBarButtonItem = searchBarButtonItem
-    }
-    
     func addTargets(){
         mainView.searchButton.addTarget(self, action: #selector(didTapSearchButton), for: .touchUpInside)
     }
@@ -52,8 +46,8 @@ class ViewController: UIViewController {
     @objc func didTapSearchButton(_ sender: UIButton) {
         // Navigate to the search screen
         let searchViewController = WeatherSearchViewController()
-        navigationController?.pushViewController(searchViewController, animated: true)
-        
+        searchViewController.modalPresentationStyle = UIModalPresentationStyle.fullScreen
+        present(searchViewController, animated: false, completion: nil)
         print("did tap search button")
         }
 }
@@ -76,4 +70,3 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
         return cell
     }
 }
-

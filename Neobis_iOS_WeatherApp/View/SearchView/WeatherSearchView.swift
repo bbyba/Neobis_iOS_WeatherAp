@@ -14,23 +14,25 @@ class WeatherSearchView: UIView {
     let searchLocationBackground: UIView = {
         let view = UIView()
         view.backgroundColor = .white
-        view.layer.cornerRadius = 20
+        view.layer.cornerRadius = 30
   
         return view
     }()
     
-//    lazy var closeButton: UIButton = {
-//        let button = UIButton()
-//        button.setBackgroundImage(UIImage(systemName: "xmark.circle"), for: .normal)
-//        button.tintColor = .black
-//        return button
-//    }()
+    lazy var closeButton: UIButton = {
+        let button = UIButton()
+        button.setBackgroundImage(UIImage(systemName: "xmark"), for: .normal)
+        button.tintColor = .black
+        
+        return button
+    }()
     
     let searchBar : UISearchBar = {
         let bar = UISearchBar()
         bar.placeholder = "SEARCH LOCATION"
         bar.searchTextField.font = UIFont(name: "Montserrat-Light", size: 14)
         bar.searchBarStyle = .minimal
+        bar.layer.cornerRadius = 15
         
         return bar
     }()
@@ -42,8 +44,9 @@ class WeatherSearchView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = .yellow
+        backgroundColor = .cyan
         layer.addSublayer(gradientLayer)
+        
         addSubviews()
         setupConstraints()
     }
@@ -54,17 +57,22 @@ class WeatherSearchView: UIView {
     
     func addSubviews(){
         addSubview(searchLocationBackground)
-        
-//        searchLocationBackground.addSubview(closeButton)
+        searchLocationBackground.addSubview(closeButton)
         searchLocationBackground.addSubview(searchBar)
     }
     
     func setupConstraints(){
-//        closeButton.snp.makeConstraints(){ make in
-//            make.top.equalToSuperview().offset(30)
-//            make.right.equalToSuperview().inset(30)
-//            make.height.width.equalTo(30)
-//        }
+        searchLocationBackground.snp.makeConstraints(){ make in
+            make.top.equalToSuperview().offset(70)
+            make.leading.trailing.equalToSuperview()
+            make.height.equalTo(365)
+        }
+        
+        closeButton.snp.makeConstraints(){ make in
+            make.top.equalToSuperview().offset(30)
+            make.right.equalToSuperview().inset(30)
+            make.height.width.equalTo(20)
+        }
         
         searchBar.snp.makeConstraints(){ make in
             make.centerX.equalToSuperview()

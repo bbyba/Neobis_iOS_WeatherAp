@@ -18,10 +18,13 @@
 		DDF261812B0E600B00C006CE /* Neobis_iOS_WeatherAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF261802B0E600B00C006CE /* Neobis_iOS_WeatherAppTests.swift */; };
 		DDF2618B2B0E600B00C006CE /* Neobis_iOS_WeatherAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF2618A2B0E600B00C006CE /* Neobis_iOS_WeatherAppUITests.swift */; };
 		DDF2618D2B0E600B00C006CE /* Neobis_iOS_WeatherAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF2618C2B0E600B00C006CE /* Neobis_iOS_WeatherAppUITestsLaunchTests.swift */; };
-		DDF2619E2B0F8E7B00C006CE /* WeatherFirstView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF2619D2B0F8E7B00C006CE /* WeatherFirstView.swift */; };
+		DDF2619E2B0F8E7B00C006CE /* WeatherMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF2619D2B0F8E7B00C006CE /* WeatherMainView.swift */; };
 		DDF261A12B0F93B300C006CE /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DDF261A02B0F93B300C006CE /* Montserrat-Bold.ttf */; };
 		DDF261A32B0F93CB00C006CE /* Montserrat-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DDF261A22B0F93CB00C006CE /* Montserrat-Light.ttf */; };
 		DDF261A52B0F9B1B00C006CE /* WeatherCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF261A42B0F9B1B00C006CE /* WeatherCollectionViewCell.swift */; };
+		DDF261A72B0F9D2300C006CE /* DailyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF261A62B0F9D2300C006CE /* DailyModel.swift */; };
+		DDF261A92B0FC92100C006CE /* WeatherSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF261A82B0FC92100C006CE /* WeatherSearchView.swift */; };
+		DDF261AB2B0FDBE600C006CE /* SecondaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDF261AA2B0FDBE600C006CE /* SecondaryViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,10 +64,13 @@
 		DDF261862B0E600B00C006CE /* Neobis_iOS_WeatherAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Neobis_iOS_WeatherAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDF2618A2B0E600B00C006CE /* Neobis_iOS_WeatherAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Neobis_iOS_WeatherAppUITests.swift; sourceTree = "<group>"; };
 		DDF2618C2B0E600B00C006CE /* Neobis_iOS_WeatherAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Neobis_iOS_WeatherAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		DDF2619D2B0F8E7B00C006CE /* WeatherFirstView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherFirstView.swift; sourceTree = "<group>"; };
+		DDF2619D2B0F8E7B00C006CE /* WeatherMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherMainView.swift; sourceTree = "<group>"; };
 		DDF261A02B0F93B300C006CE /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
 		DDF261A22B0F93CB00C006CE /* Montserrat-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Light.ttf"; sourceTree = "<group>"; };
 		DDF261A42B0F9B1B00C006CE /* WeatherCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCollectionViewCell.swift; sourceTree = "<group>"; };
+		DDF261A62B0F9D2300C006CE /* DailyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyModel.swift; sourceTree = "<group>"; };
+		DDF261A82B0FC92100C006CE /* WeatherSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherSearchView.swift; sourceTree = "<group>"; };
+		DDF261AA2B0FDBE600C006CE /* SecondaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryViewController.swift; sourceTree = "<group>"; };
 		EACC80E7289E3D4F4C50AB39 /* Pods-Neobis_iOS_WeatherAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Neobis_iOS_WeatherAppTests.debug.xcconfig"; path = "Target Support Files/Pods-Neobis_iOS_WeatherAppTests/Pods-Neobis_iOS_WeatherAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F7E27F0C9172886A52567E3E /* Pods-Neobis_iOS_WeatherApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Neobis_iOS_WeatherApp.debug.xcconfig"; path = "Target Support Files/Pods-Neobis_iOS_WeatherApp/Pods-Neobis_iOS_WeatherApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -132,15 +138,13 @@
 		DDF261682B0E600800C006CE /* Neobis_iOS_WeatherApp */ = {
 			isa = PBXGroup;
 			children = (
-				DDF2619C2B0F8C1600C006CE /* Model */,
 				DDF2619B2B0F8C0100C006CE /* ViewModel */,
+				DDF2619C2B0F8C1600C006CE /* Model */,
+				DDF261AE2B10DB3100C006CE /* ViewControllers */,
 				DDF2619A2B0F8BF900C006CE /* View */,
-				DDF2616D2B0E600800C006CE /* ViewController.swift */,
-				DDF2619D2B0F8E7B00C006CE /* WeatherFirstView.swift */,
 				DDF261722B0E600B00C006CE /* Assets.xcassets */,
 				DDF2619F2B0F92E700C006CE /* Fonts */,
 				DDF261992B0F8BAF00C006CE /* Supporting */,
-				DDF261A42B0F9B1B00C006CE /* WeatherCollectionViewCell.swift */,
 			);
 			path = Neobis_iOS_WeatherApp;
 			sourceTree = "<group>";
@@ -176,6 +180,8 @@
 		DDF2619A2B0F8BF900C006CE /* View */ = {
 			isa = PBXGroup;
 			children = (
+				DDF261AC2B10DAE800C006CE /* MainView */,
+				DDF261AD2B10DAF800C006CE /* SearchView */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -190,6 +196,7 @@
 		DDF2619C2B0F8C1600C006CE /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				DDF261A62B0F9D2300C006CE /* DailyModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -201,6 +208,32 @@
 				DDF261A02B0F93B300C006CE /* Montserrat-Bold.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		DDF261AC2B10DAE800C006CE /* MainView */ = {
+			isa = PBXGroup;
+			children = (
+				DDF261A42B0F9B1B00C006CE /* WeatherCollectionViewCell.swift */,
+				DDF2619D2B0F8E7B00C006CE /* WeatherMainView.swift */,
+			);
+			path = MainView;
+			sourceTree = "<group>";
+		};
+		DDF261AD2B10DAF800C006CE /* SearchView */ = {
+			isa = PBXGroup;
+			children = (
+				DDF261A82B0FC92100C006CE /* WeatherSearchView.swift */,
+			);
+			path = SearchView;
+			sourceTree = "<group>";
+		};
+		DDF261AE2B10DB3100C006CE /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				DDF2616D2B0E600800C006CE /* ViewController.swift */,
+				DDF261AA2B0FDBE600C006CE /* SecondaryViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		FA63D4B4F2E7E6C3BB707399 /* Pods */ = {
@@ -457,10 +490,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				DDF261A52B0F9B1B00C006CE /* WeatherCollectionViewCell.swift in Sources */,
-				DDF2619E2B0F8E7B00C006CE /* WeatherFirstView.swift in Sources */,
+				DDF261A72B0F9D2300C006CE /* DailyModel.swift in Sources */,
+				DDF2619E2B0F8E7B00C006CE /* WeatherMainView.swift in Sources */,
 				DDF2616E2B0E600800C006CE /* ViewController.swift in Sources */,
 				DDF2616A2B0E600800C006CE /* AppDelegate.swift in Sources */,
 				DDF2616C2B0E600800C006CE /* SceneDelegate.swift in Sources */,
+				DDF261A92B0FC92100C006CE /* WeatherSearchView.swift in Sources */,
+				DDF261AB2B0FDBE600C006CE /* SecondaryViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -545,7 +581,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -608,7 +644,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -637,7 +673,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = H7BR8NTQAT;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Neobis_iOS_WeatherApp/Info.plist;
+				INFOPLIST_FILE = Neobis_iOS_WeatherApp/Supporting/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -665,7 +701,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = H7BR8NTQAT;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Neobis_iOS_WeatherApp/Info.plist;
+				INFOPLIST_FILE = Neobis_iOS_WeatherApp/Supporting/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

@@ -10,18 +10,11 @@ import UIKit
 class WeatherSearchViewController: UIViewController {
     let secondaryView = WeatherSearchView()
     
-    lazy var closeButton: UIButton = {
-        let button = UIButton()
-        button.setBackgroundImage(UIImage(systemName: "xmark.circle"), for: .normal)
-        button.tintColor = .black
-        return button
-    }()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         view.addSubview(secondaryView)
-        configureNavBar()
+        setupConstraintsSecondaryView()
+        addTargets()
     }
     
     func setupConstraintsSecondaryView(){
@@ -30,13 +23,8 @@ class WeatherSearchViewController: UIViewController {
         }
     }
     
-    func configureNavBar() {
-        let closeButton = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(didTapCloseButton))
-        navigationItem.rightBarButtonItem = closeButton
-    }
-    
     func addTargets(){
-        closeButton.addTarget(self, action: #selector(didTapCloseButton(_ :)), for: .touchUpInside)
+        secondaryView.closeButton.addTarget(self, action: #selector(didTapCloseButton(_ :)), for: .touchUpInside)
     }
     
     @objc func didTapCloseButton(_ sender: UIButton) {
