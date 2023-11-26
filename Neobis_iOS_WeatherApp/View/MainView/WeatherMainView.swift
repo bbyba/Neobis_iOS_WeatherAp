@@ -25,7 +25,7 @@ class WeatherMainView: UIView {
     
     lazy var dateLabel: UILabel = {
         let label = UILabel()
-        label.text = "2023/11/23"
+        label.text = ""
         label.font = UIFont(name: "Montserrat-Light", size: 14)
         label.textColor = .white
         label.textAlignment = .center
@@ -35,7 +35,7 @@ class WeatherMainView: UIView {
     
     lazy var cityLabel: UILabel = {
         let label = UILabel()
-        label.text = "madrid"
+        label.text = ""
         label.font = UIFont(name: "Montserrat-Bold", size: 40)
         label.textColor = .white
         label.textAlignment = .center
@@ -45,7 +45,7 @@ class WeatherMainView: UIView {
     
     lazy var countryLabel: UILabel = {
         let label = UILabel()
-        label.text = "spain"
+        label.text = ""
         label.font = UIFont(name: "Montserrat-Light", size: 20)
         label.textColor = .white
         label.textAlignment = .center
@@ -65,7 +65,7 @@ class WeatherMainView: UIView {
     }()
     
     let currentWeatherImage: UIImageView = {
-        let image = UIImageView(image: UIImage(named: "stormy"))
+        let image = UIImageView(image: UIImage(named: ""))
         image.contentMode = .scaleAspectFit
         
         return image
@@ -73,7 +73,7 @@ class WeatherMainView: UIView {
     
     lazy var currentTemperatureLabel: UILabel = {
         let label = UILabel()
-        label.text = "22"
+        label.text = ""
         label.font = UIFont(name: "Montserrat-Light", size: 100)
         label.textColor = .black
         label.textAlignment = .center
@@ -102,7 +102,7 @@ class WeatherMainView: UIView {
     
     lazy var windSpeed: UILabel = {
         let label = UILabel()
-        label.text = "7 mph"
+        label.text = ""
         label.font = UIFont(name: "Montserrat-Light", size: 20)
         label.textColor = .white
         label.textAlignment = .center
@@ -122,7 +122,7 @@ class WeatherMainView: UIView {
     
     lazy var humidityPercentage: UILabel = {
         let label = UILabel()
-        label.text = "85%"
+        label.text = ""
         label.font = UIFont(name: "Montserrat-Light", size: 20)
         label.textColor = .white
         label.textAlignment = .center
@@ -148,7 +148,7 @@ class WeatherMainView: UIView {
     
     lazy var visibilityDistance: UILabel = {
         let label = UILabel()
-        label.text = "64 m"
+        label.text = ""
         label.font = UIFont(name: "Montserrat-Light", size: 20)
         label.textColor = .white
         label.textAlignment = .center
@@ -168,7 +168,7 @@ class WeatherMainView: UIView {
     
     lazy var airPressureValue: UILabel = {
         let label = UILabel()
-        label.text = "1000"
+        label.text = ""
         label.font = UIFont(name: "Montserrat-Light", size: 20)
         label.textColor = .white
         label.textAlignment = .center
