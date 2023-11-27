@@ -57,11 +57,17 @@ extension WeatherSearchViewController: UITextFieldDelegate {
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         //use the data before clearing
-//        if let city = secondaryView.searchTextField.text {
-//            weatherManager.fetchWeather(cityName: city, completion: (WeatherData) -> ())
-//        }
-        
+        let city = secondaryView.searchTextField.text
         secondaryView.searchTextField.text = ""
-        
     }
 }
+
+
+//if let city = secondaryView.searchTextField.text {
+//    weatherManager.fetchWeather(cityName: city) { weatherData in
+//        print("Received weather data: \(weatherData)")
+//    }
+//    weatherManager.fetchDailyWeather(cityName: city) { dailyWeatherData in
+//        print("Received daily weather data: \(dailyWeatherData)")
+//    }
+//}

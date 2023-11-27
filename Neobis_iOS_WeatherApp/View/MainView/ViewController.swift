@@ -19,9 +19,7 @@ class ViewController: UIViewController {
 
 
         ]
-    let weatherModel = WeatherModel(conditionId: <#Int#>, cityName: <#String#>, countryName: <#String#>, temperature: <#Double#>, windSpeed: <#Double#>, humidity: <#Int#>, visibility: <#Int#>, airPressure: <#Int#>)
-//    let dailyWeatherViewModel = DailyWeatherViewModel()
-    
+
     var weatherManager = WeatherManager()
     
     override func viewDidLoad() {
@@ -53,17 +51,17 @@ class ViewController: UIViewController {
         present(searchViewController, animated: false, completion: nil)
     }
     
-    func updateUI(with weatherModel: WeatherModel) {
-        // Update your UI components with data from the WeatherModel
-        mainView.cityLabel.text = weatherModel.cityName
-        mainView.countryLabel.text = weatherModel.countryName
-        mainView.currentTemperatureLabel.text = weatherModel.temperatureString
-        mainView.windSpeed.text = "\(Int(weatherModel.windSpeed)) mph"
-        mainView.visibilityDistance.text = "\((weatherModel.visibility)) miles"
-        mainView.humidityPercentage.text = "\(weatherModel.humidity)%"
-        mainView.airPressureValue.text = "\(weatherModel.airPressure) mb"
-        
-    }
+//    func updateUI(with weatherModel: WeatherModel) {
+//        // Update your UI components with data from the WeatherModel
+//        mainView.cityLabel.text = weatherModel.cityName
+//        mainView.countryLabel.text = weatherModel.countryName
+//        mainView.currentTemperatureLabel.text = weatherModel.temperatureString
+//        mainView.windSpeed.text = "\(Int(weatherModel.windSpeed)) mph"
+//        mainView.visibilityDistance.text = "\((weatherModel.visibility)) miles"
+//        mainView.humidityPercentage.text = "\(weatherModel.humidity)%"
+//        mainView.airPressureValue.text = "\(weatherModel.airPressure) mb"
+//        
+//    }
 }
 
 
