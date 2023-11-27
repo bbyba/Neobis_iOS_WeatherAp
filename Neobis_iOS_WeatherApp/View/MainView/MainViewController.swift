@@ -1,14 +1,14 @@
 //
-//  ViewController.swift
+//  MainViewController.swift
 //
 
 
 import UIKit
 import Foundation
 
-class ViewController: UIViewController {
+class MainViewController: UIViewController {
     
-    let mainView = WeatherMainView()
+    let mainView = MainView()
     let secondaryView = WeatherSearchView()
     let dailyModel = [
             DailyModel(weekDay: "Monday", temperature: "22", image: "cloudy"),
@@ -65,7 +65,7 @@ class ViewController: UIViewController {
 }
 
 
-extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension MainViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
     }
@@ -75,7 +75,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "weatherCollectionViewCell", for: indexPath) as! WeatherCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "weatherCollectionViewCell", for: indexPath) as! CollectionViewCell
         let data = dailyModel[indexPath.item]
         cell.configure(with: data)
         

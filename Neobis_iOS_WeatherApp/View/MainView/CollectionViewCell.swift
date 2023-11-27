@@ -1,10 +1,10 @@
 //
-//  WeatherCollectionViewCell.swift
+//  CollectionViewCell.swift
 //
 
 import UIKit
 
-class WeatherCollectionViewCell: UICollectionViewCell {
+class CollectionViewCell: UICollectionViewCell {
     
     private lazy var weekDay: UILabel = {
         let label = UILabel()

@@ -6,7 +6,7 @@ import UIKit
 import SnapKit
 import Foundation
 
-class WeatherSearchView: UIView, UISearchBarDelegate {
+class SearchView: UIView, UISearchBarDelegate {
     
     let searchLocationBackground: UIView = {
         let view = UIView()

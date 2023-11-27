@@ -5,8 +5,8 @@
 
 import UIKit
 
-class WeatherSearchViewController: UIViewController {
-    let secondaryView = WeatherSearchView()
+class SearchViewController: UIViewController {
+    let secondaryView = SearchView()
     var weatherManager = WeatherManager()
     
     override func viewDidLoad() {
@@ -34,7 +34,7 @@ class WeatherSearchViewController: UIViewController {
 }
 
 //MARK: -
-extension WeatherSearchViewController: UITextFieldDelegate {
+extension SearchViewController: UITextFieldDelegate {
     
     @objc func didTapSecondSearchButton(_ sender: UIButton) {
         print(secondaryView.searchTextField.text!)

@@ -1,12 +1,12 @@
 //
-//  WeatherMainView.swift
+//  MainView.swift
 //
 
 import UIKit
 import SnapKit
 import Foundation
 
-class WeatherMainView: UIView {
+class MainView: UIView {
     
     //Level 1
     lazy var searchButton: UIButton = {
@@ -227,7 +227,7 @@ class WeatherMainView: UIView {
         collectionView = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
         collectionView.backgroundColor = .clear
         collectionView.showsHorizontalScrollIndicator = false
-        collectionView.register(WeatherCollectionViewCell.self, forCellWithReuseIdentifier: "weatherCollectionViewCell")
+        collectionView.register(CollectionViewCell.self, forCellWithReuseIdentifier: "weatherCollectionViewCell")
     }
     
     required init?(coder: NSCoder) {
