@@ -1,6 +1,5 @@
 //
 //  SecondaryViewController.swift
-//  Neobis_iOS_WeatherApp
 //
 
 
@@ -58,9 +57,9 @@ extension WeatherSearchViewController: UITextFieldDelegate {
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         //use the data before clearing
-        if let city = secondaryView.searchTextField.text {
-            weatherManager.fetchWeather(cityName: city)
-        }
+//        if let city = secondaryView.searchTextField.text {
+//            weatherManager.fetchWeather(cityName: city, completion: (WeatherData) -> ())
+//        }
         
         secondaryView.searchTextField.text = ""
         

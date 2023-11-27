@@ -1,6 +1,5 @@
 //
 //  ViewController.swift
-//  Neobis_iOS_WeatherApp
 //
 
 
@@ -20,7 +19,7 @@ class ViewController: UIViewController {
 
 
         ]
-//    let currentWeatherViewModel = CurrentWeatherViewModel()
+    let weatherModel = WeatherModel(conditionId: <#Int#>, cityName: <#String#>, countryName: <#String#>, temperature: <#Double#>, windSpeed: <#Double#>, humidity: <#Int#>, visibility: <#Int#>, airPressure: <#Int#>)
 //    let dailyWeatherViewModel = DailyWeatherViewModel()
     
     var weatherManager = WeatherManager()
@@ -52,24 +51,18 @@ class ViewController: UIViewController {
         let searchViewController = WeatherSearchViewController()
         searchViewController.modalPresentationStyle = UIModalPresentationStyle.fullScreen
         present(searchViewController, animated: false, completion: nil)
-        
-        weatherManager.fetchWeather(cityName: "London") { weatherModel in
-                if let weatherModel = weatherModel {
-                    // Update UI with the fetched data
-                    DispatchQueue.main.async {
-                        self.updateUI(with: weatherModel)
-                    }
-                } else {
-                    // Handle error or show an alert
-                    print("Failed to fetch weather data.")
-                }
-            }
     }
+    
     func updateUI(with weatherModel: WeatherModel) {
         // Update your UI components with data from the WeatherModel
         mainView.cityLabel.text = weatherModel.cityName
         mainView.countryLabel.text = weatherModel.countryName
-        // Update other UI components as needed
+        mainView.currentTemperatureLabel.text = weatherModel.temperatureString
+        mainView.windSpeed.text = "\(Int(weatherModel.windSpeed)) mph"
+        mainView.visibilityDistance.text = "\((weatherModel.visibility)) miles"
+        mainView.humidityPercentage.text = "\(weatherModel.humidity)%"
+        mainView.airPressureValue.text = "\(weatherModel.airPressure) mb"
+        
     }
 }
 
