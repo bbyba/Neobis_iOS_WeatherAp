@@ -1,5 +1,5 @@
 //
-//  SecondaryViewController.swift
+//  SearchViewController.swift
 //
 
 
@@ -57,17 +57,16 @@ extension SearchViewController: UITextFieldDelegate {
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         //use the data before clearing
-        let city = secondaryView.searchTextField.text
+        if let city = secondaryView.searchTextField.text {
+            weatherManager.fetchWeather(cityName: city) { weatherData in
+                print("Received weather data: \(weatherData)")
+            }
+            weatherManager.fetchDailyWeather(cityName: city) { dailyWeatherData in
+                print("Received daily weather data: \(dailyWeatherData)")
+            }
+        }
         secondaryView.searchTextField.text = ""
     }
 }
 
 
-//if let city = secondaryView.searchTextField.text {
-//    weatherManager.fetchWeather(cityName: city) { weatherData in
-//        print("Received weather data: \(weatherData)")
-//    }
-//    weatherManager.fetchDailyWeather(cityName: city) { dailyWeatherData in
-//        print("Received daily weather data: \(dailyWeatherData)")
-//    }
-//}

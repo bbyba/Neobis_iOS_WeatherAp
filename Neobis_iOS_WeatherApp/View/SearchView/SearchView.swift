@@ -8,6 +8,17 @@ import Foundation
 
 class SearchView: UIView, UISearchBarDelegate {
     
+    lazy var gradientLayer: CAGradientLayer = {
+        let gradient = CAGradientLayer()
+        gradient.frame = bounds
+        gradient.colors = [UIColor(red: 48 / 255, green: 162 / 255, blue: 197 / 255, alpha: 1).cgColor, UIColor(red: 0 / 255, green: 36 / 255, blue: 47 / 255, alpha: 1).cgColor]
+        gradient.startPoint = CGPoint(x: 0.5, y: 0)
+        gradient.endPoint = CGPoint(x: 0.5, y: 1)
+        layer.insertSublayer(gradient, at: 0)
+        
+        return gradient
+    }()
+    
     let searchLocationBackground: UIView = {
         let view = UIView()
         view.backgroundColor = .white
@@ -53,18 +64,15 @@ class SearchView: UIView, UISearchBarDelegate {
         return button
     }()
     
-    lazy var gradientLayer: CAGradientLayer = {
-        let gradient = CAGradientLayer()
-        return gradient
-    }()
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = .cyan
-        layer.addSublayer(gradientLayer)
-        
         addSubviews()
         setupConstraints()
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        gradientLayer.frame = bounds
     }
     
     required init?(coder: NSCoder) {
@@ -104,13 +112,5 @@ class SearchView: UIView, UISearchBarDelegate {
             make.width.equalTo(30)
             make.height.equalTo(30)
         }
-    }
-        
-    func setupGradient() {
-        gradientLayer.frame = bounds
-        gradientLayer.colors = [UIColor(red: 48 / 255, green: 162 / 255, blue: 197 / 255, alpha: 1).cgColor, UIColor(red: 0 / 255, green: 36 / 255, blue: 47 / 255, alpha: 1).cgColor]
-        gradientLayer.startPoint = CGPoint(x: 0.5, y: 0)
-        gradientLayer.endPoint = CGPoint(x: 0.5, y: 1)
-        //        layer.insertSublayer(gradientLayer, at: 0)
     }
 }

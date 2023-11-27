@@ -9,7 +9,8 @@ import Foundation
 class MainViewController: UIViewController {
     
     let mainView = MainView()
-    let secondaryView = WeatherSearchView()
+    let secondaryView = SearchView()
+    
     let dailyModel = [
             DailyModel(weekDay: "Monday", temperature: "22", image: "cloudy"),
             DailyModel(weekDay: "Tuesday", temperature: "10", image: "stormy"),
@@ -46,7 +47,7 @@ class MainViewController: UIViewController {
     
     @objc func didTapSearchButton(_ sender: UIButton) {
         // Navigate to the search screen
-        let searchViewController = WeatherSearchViewController()
+        let searchViewController = SearchViewController()
         searchViewController.modalPresentationStyle = UIModalPresentationStyle.fullScreen
         present(searchViewController, animated: false, completion: nil)
     }

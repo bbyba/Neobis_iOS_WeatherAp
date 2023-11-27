@@ -1,5 +1,5 @@
 //
-//  APIService.swift
+//  APIManager.swift
 //
 
 import Foundation
