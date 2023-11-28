@@ -23,6 +23,8 @@ class MainViewController: UIViewController {
 
     var weatherManager = WeatherManager()
     
+    private var viewModel: WeatherViewModelProtocol
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -51,20 +53,47 @@ class MainViewController: UIViewController {
         searchViewController.modalPresentationStyle = UIModalPresentationStyle.fullScreen
         present(searchViewController, animated: false, completion: nil)
     }
-
     
-    func updateData(weatherData: WeatherData, dailyWeatherData: dailyWeatherData) {   //in the viewController?
-        DispatchQueue.main.async {
-            self.mainView.cityLabel.text = weatherData.name
-            self.mainView.countryLabel.text = weatherData.sys.country
-            self.mainView.currentTemperatureLabel.text = "\(weatherData.main.temp) °C"
-            self.mainView.windSpeed.text = "\(weatherData.wind.speed) mph"
-            self.mainView.visibilityDistance.text = "\((weatherData.visibility)) miles"
-            self.mainView.humidityPercentage.text = "\(weatherData.main.humidity) %"
-            self.mainView.airPressureValue.text = "\(weatherData.main.pressure) mb"
-            //CollectionView
+    init(viewModel: WeatherViewModelProtocol = CurrentWeatherViewModel()) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+
+        self.viewModel.updateUI = { [weak self] weatherData in
+            guard let self else { return }
+            DispatchQueue.main.async {
+                self.mainView.cityLabel.text = weatherData.name
+                self.mainView.countryLabel.text = weatherData.sys.country
+                self.mainView.currentTemperatureLabel.text = "\(weatherData.main.temp) °C"
+                self.mainView.windSpeed.text = "\(weatherData.wind.speed) mph"
+                self.mainView.visibilityDistance.text = "\((weatherData.visibility)) miles"
+                self.mainView.humidityPercentage.text = "\(weatherData.main.humidity) %"
+                self.mainView.airPressureValue.text = "\(weatherData.main.pressure) mb"
+            }
         }
     }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+//    func updateUI(weatherData: WeatherData, dailyWeatherData: dailyWeatherData) {   //in the viewController?
+//        DispatchQueue.main.async {
+//            self.mainView.cityLabel.text = weatherData.name
+//            self.mainView.countryLabel.text = weatherData.sys.country
+//            self.mainView.currentTemperatureLabel.text = "\(self.weatherModel.temperature) °C"
+//            self.mainView.windSpeed.text = "\(self.weatherModel.windSpeed) mph"
+//            self.mainView.visibilityDistance.text = "\(self.weatherModel.visibility) miles"
+//            self.mainView.humidityPercentage.text = "\(self.weatherModel.humidity) %"
+//            self.mainView.airPressureValue.text = "\(self.weatherModel.airPressure) mb"
+//            //CollectionView
+//        }
+//    }
+    
+//    mainView.currentTemperatureLabel.text = "\(self.weatherModel.temperature) °C"
+//    mainView.windSpeed.text = "\(self.weatherModel.windSpeed) mph"
+//    mainView.visibilityDistance.text = "\(self.weatherModel.visibility) miles"
+//    mainView.humidityPercentage.text = "\(self.weatherModel.humidity) %"
+//    mainView.airPressureValue.text = "\(self.weatherModel.airPressure) mb"
 }
 
 

@@ -11,14 +11,14 @@ struct DailyModel {
 }
 
 struct WeatherModel {
-    let conditionId: Int
-    let cityName: String
-    let countryName: String
-    let temperature: Double
-    let windSpeed: Double
-    let humidity: Int
-    let visibility: Int
-    let airPressure: Int
+    var conditionId: Int
+    var cityName: String
+    var countryName: String
+    var temperature: Double
+    var windSpeed: Double
+    var humidity: Int
+    var visibility: Int
+    var airPressure: Int
     
     var temperatureString: String {
         return String(format: "%.0f", temperature)
