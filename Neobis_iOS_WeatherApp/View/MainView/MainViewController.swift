@@ -51,18 +51,20 @@ class MainViewController: UIViewController {
         searchViewController.modalPresentationStyle = UIModalPresentationStyle.fullScreen
         present(searchViewController, animated: false, completion: nil)
     }
+
     
-//    func updateUI(with weatherModel: WeatherModel) {
-//        // Update your UI components with data from the WeatherModel
-//        mainView.cityLabel.text = weatherModel.cityName
-//        mainView.countryLabel.text = weatherModel.countryName
-//        mainView.currentTemperatureLabel.text = weatherModel.temperatureString
-//        mainView.windSpeed.text = "\(Int(weatherModel.windSpeed)) mph"
-//        mainView.visibilityDistance.text = "\((weatherModel.visibility)) miles"
-//        mainView.humidityPercentage.text = "\(weatherModel.humidity)%"
-//        mainView.airPressureValue.text = "\(weatherModel.airPressure) mb"
-//        
-//    }
+    func updateData(weatherData: WeatherData, dailyWeatherData: dailyWeatherData) {   //in the viewController?
+        DispatchQueue.main.async {
+            self.mainView.cityLabel.text = weatherData.name
+            self.mainView.countryLabel.text = weatherData.sys.country
+            self.mainView.currentTemperatureLabel.text = "\(weatherData.main.temp) °C"
+            self.mainView.windSpeed.text = "\(weatherData.wind.speed) mph"
+            self.mainView.visibilityDistance.text = "\((weatherData.visibility)) miles"
+            self.mainView.humidityPercentage.text = "\(weatherData.main.humidity) %"
+            self.mainView.airPressureValue.text = "\(weatherData.main.pressure) mb"
+            //CollectionView
+        }
+    }
 }
 
 

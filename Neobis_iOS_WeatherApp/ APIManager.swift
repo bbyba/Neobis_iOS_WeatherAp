@@ -5,6 +5,7 @@
 import Foundation
 
 class WeatherManager {
+    
     func fetchWeather(cityName: String, completion: @escaping (WeatherData) -> ()) {
         let weatherURL = "https://api.openweathermap.org/data/2.5/weather?&appid=cec158852b5addf4cd84364ca0ea0d17&units=metric"
         let urlString = "\(weatherURL)&q=\(cityName)"
@@ -20,8 +21,8 @@ class WeatherManager {
             guard let data = data else { return }
                     
             do {
-                let weather = try JSONDecoder().decode(WeatherData.self, from: data)
-                completion(weather)
+                let decodedResponse = try JSONDecoder().decode(WeatherData.self, from: data)
+                completion(decodedResponse)
             } catch let jsonError {
                 print(jsonError)
             }
@@ -42,8 +43,8 @@ class WeatherManager {
             guard let data = data else { return }
                     
             do {
-                let weather = try JSONDecoder().decode(dailyWeatherData.self, from: data)
-                completion(weather)
+                let decodedResponse = try JSONDecoder().decode(dailyWeatherData.self, from: data)
+                completion(decodedResponse)
             } catch let jsonError {
                 print(jsonError)
             }

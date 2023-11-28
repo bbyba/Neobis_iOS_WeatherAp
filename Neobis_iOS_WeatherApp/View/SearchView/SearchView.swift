@@ -52,6 +52,9 @@ class SearchView: UIView, UISearchBarDelegate {
         textField.placeholder = "SEARCH LOCATION"
         textField.textColor = .black
         textField.layer.cornerRadius = 22
+        let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: textField.frame.height))
+        textField.leftView = paddingView
+        textField.leftViewMode = .always
 
         return textField
     }()
@@ -95,7 +98,7 @@ class SearchView: UIView, UISearchBarDelegate {
         
         closeButton.snp.makeConstraints(){ make in
             make.top.equalToSuperview().offset(30)
-            make.right.equalToSuperview().inset(30)
+            make.right.equalToSuperview().inset(15)
             make.height.width.equalTo(20)
         }
         
